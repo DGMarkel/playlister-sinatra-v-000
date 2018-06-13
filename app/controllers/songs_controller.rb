@@ -49,7 +49,7 @@ class SongsController < ApplicationController
     @song.name = params[:song_name]
     if !params[:artist_name].empty?
       @song.artist_id = Artist.create(name: params[:artist_name]).id
-    if params[:artist_id] != nil
+    else
       @song.artist_id = params[:artist_id]
 
     end
