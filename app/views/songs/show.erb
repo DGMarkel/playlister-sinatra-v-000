@@ -4,7 +4,7 @@
   <%= flash[:message] %>
 <% end %>
 
-<h3>You selected <%= @song.name %></h3>
+<h3>You selected <%= @song.song_name %></h3>
 
 <h4>Artist: </h4><a href="/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a>
 
