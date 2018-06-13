@@ -1,4 +1,4 @@
-require '/concerns/slugifiable'
+require_relative '/concerns/slugifiable'
 
 class Artist < ActiveRecord::Base
   extend Slugifiable::ClassMethods
