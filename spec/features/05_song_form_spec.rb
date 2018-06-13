@@ -99,6 +99,7 @@ describe "Song Forms" do
 
         expect(page).to have_content("Successfully updated song.")
         expect(page).to have_content(song_name)
+        binding.pry
         expect(page).to have_content("Some Nobody")
       end
 
