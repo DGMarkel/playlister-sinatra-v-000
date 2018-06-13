@@ -21,8 +21,8 @@ class SongsController < ApplicationController
     #if Artist.all.include?(params)
     if !params[:artist_name].empty? && params[:artist_id]
       redirect to '/songs/new'
-    elsif !params[:artist_name].empty? && !Artist.all.detect {|artist| artist.name == params[:artist_name]}
-      @song.artist_id = Artist.create(name: params[:artist_name]).id
+    elsif !params[:artist_name].empty?
+      @song.artist_id = Artist.find_or_create_by(name: params[:artist_name]).id
     else
       binding.pry
       @song.artist_id = params[:artist_id]
