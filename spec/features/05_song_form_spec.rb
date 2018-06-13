@@ -98,6 +98,7 @@ describe "Song Forms" do
         click_on "Save"
 
         expect(page).to have_content("Successfully updated song.")
+        print page.body
         expect(page).to have_content(song_name)
         expect(page).to have_content("Some Nobody")
       end
