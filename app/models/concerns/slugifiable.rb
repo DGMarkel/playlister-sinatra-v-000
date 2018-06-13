@@ -6,7 +6,7 @@ module Slugifiable
       name.gsub(" ", "-").downcase
     end
 
-  end 
+  end
 
   module ClassMethods
 
