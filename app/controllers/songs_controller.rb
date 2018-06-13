@@ -24,7 +24,6 @@ class SongsController < ApplicationController
     elsif !params[:artist_name].empty?
       @song.artist_id = Artist.find_or_create_by(name: params[:artist_name]).id
     else
-      binding.pry
       @song.artist_id = params[:artist_id]
     end
     @song.save
