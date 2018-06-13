@@ -51,7 +51,6 @@ class SongsController < ApplicationController
       @song.artist_id = Artist.create(name: params[:artist_name]).id
     else
       @song.artist_id = params[:artist_id]
-
     end
     @song.save
     flash[:message] = "Successfully updated song."
