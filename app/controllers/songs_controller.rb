@@ -24,6 +24,7 @@ class SongsController < ApplicationController
     elsif !params[:artist_name].empty? && !Artist.all.detect {|artist| artist.name == params[:artist_name]}
       @song.artist_id = Artist.create(name: params[:artist_name]).id
     else
+      binding.pry
       @song.artist_id = params[:artist_id]
     end
     @song.save
