@@ -47,10 +47,11 @@ class SongsController < ApplicationController
     genres = Genre.find(params[:genres])
     genres.each {|genre| @song.genres << genre if !@song.genres.include?(genre)}
     @song.name = params[:song_name]
+    if !params[:artist_name].empty?
+      @song.artist_id = Artist.create(name: params[:artist_name]).id
     if params[:artist_id] != nil
       @song.artist_id = params[:artist_id]
-    elsif params[:artist_name] != ""
-      @song.artist_id = Artist.create(name: params[:artist_name]).id
+
     end
     @song.save
     flash[:message] = "Successfully updated song."
